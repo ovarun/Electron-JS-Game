@@ -1,0 +1,49 @@
+{
+  "name": "Electron-Games",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "There are simple game offline playable.",
+  "homepage": "https://arunov.com/MyWorks",
+  "author": "O V <info@arunov.com>",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "electrongames",
+    "category": "electron.games.arunov.com",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "^22.7.0"
+  },
+  "repository": "https://github.com/ovarun/Electron-JS-Game.git"
+}
